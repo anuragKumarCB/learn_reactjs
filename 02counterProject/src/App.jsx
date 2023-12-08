@@ -13,6 +13,9 @@ function App() {
       console.log(count)
       setCount(count)
     }
+    else if (count === upperLimit) {
+      alert(`you have hit the upper limit`)
+    }
   }
 
   const removeCount = () => {
@@ -20,6 +23,9 @@ function App() {
       count = count - 1;
       console.log(count)
       setCount(count)
+    }
+    else if (count === lowerLimit) {
+      alert(`you have hit the lower limit`)
     }
 
   }
