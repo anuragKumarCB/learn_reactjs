@@ -3,7 +3,8 @@ const ItemDetails = [{
     imgSrc: 'https://images.pexels.com/photos/6777913/pexels-photo-6777913.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     size1: 6,
     size2: 8,
-    size3: 9
+    size3: 9,
+    color: ['']
 },
 {
     cName: 'Nice',

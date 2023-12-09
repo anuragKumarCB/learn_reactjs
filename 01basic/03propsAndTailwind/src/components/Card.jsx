@@ -35,7 +35,7 @@ const Card = (props) => {
                     </div>
                     <div className="mt-3 flex items-center space-x-2">
                         <span className="block text-sm font-semibold">Colors : </span>
-                        <span className="block h-4 w-4 rounded-full border-2 border-gray-300 bg-red-400"></span>
+                        <span className={"block h-4 w-4 rounded-full border-2 border-gray-300 bg-red-400"}></span>
                         <span className="block h-4 w-4 rounded-full border-2 border-gray-300 bg-purple-400"></span>
                         <span className="block h-4 w-4 rounded-full border-2 border-gray-300 bg-orange-400"></span>
                     </div>
@@ -59,7 +59,7 @@ const Card = (props) => {
                     </button>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
 
