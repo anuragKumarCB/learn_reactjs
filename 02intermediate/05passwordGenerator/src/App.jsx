@@ -34,7 +34,7 @@ function App() {
     passwordRef.current?.select() //selecting only when there is value
     passwordRef.current?.setSelectionRange(0, 21) //doing this makes it more optimize
     window.navigator.clipboard.writeText(password)  //window is directly avaiable becuase we are using React and React is JS
-  })
+  }, [password])
   // rendering password
   useEffect(() => {
     generatePassword()
