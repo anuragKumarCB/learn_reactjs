@@ -1,30 +1,71 @@
 import { useState } from 'react'
 import './App.css'
-import ColorBtn from './components/ColorBtn'
-// import ColorBtnData from './components/ColorBtnData'
 
 function App() {
-  //intial color using state
-  const [bgColor, setBgColor] = useState('black')
+  const colorObject = [
+    //color property is background color
+    //textBlack property is color of text on that specific background
+    {
+      color: 'red',
+      textBlack: false
+    },
+    {
+      color: 'green',
+      textBlack: false
+    },
+    {
+      color: 'blue',
+      textBlack: false
+    },
+    {
+      color: 'olive',
+      textBlack: false
+    },
+    {
+      color: 'gray',
+      textBlack: false
+    },
+    {
+      color: 'yellow',
+      textBlack: true
+    },
+    {
+      color: 'pink',
+      textBlack: true
+    },
+    {
+      color: 'purple',
+      textBlack: false
+    },
+    {
+      color: 'lavender',
+      textBlack: true
+    },
+    {
+      color: 'white',
+      textBlack: true
+    },
+    {
+      color: 'black',
+      textBlack: false
+    },]
 
-  const cName = 'py-2 px-6 border-2 rounded-full';
+  const [bgColor, setBgColor] = useState('tomato')
+  const buttonClassName = 'py-2 px-6 border-2 rounded-full'
+
   return (
-    <div className='h-screen w-screen ' style={{ backgroundColor: bgColor }}>
-      <div className="my-0 mx-auto flex gap-6 justify-center items-center max-w-fit py-2 px-6 bg-white rounded-full">
-        <ColorBtn colorName="Red" handleClick={() => setBgColor('red')} cName={cName} />
-        <ColorBtn colorName="Green" handleClick={() => setBgColor('green')} cName={cName} />
-        <ColorBtn colorName="Blue" handleClick={() => setBgColor('blue')} cName={cName} />
-        <ColorBtn colorName="Olive" handleClick={() => setBgColor('olive')} cName={cName} />
-        <ColorBtn colorName="Gray" handleClick={() => setBgColor('gray')} cName={cName} />
-        <ColorBtn colorName="Yellow" handleClick={() => setBgColor('yellow')} cName={cName} textColor="Black" />
-        <ColorBtn colorName="Pink" handleClick={() => setBgColor('pink')} cName={cName} textColor="Black" />
-        <ColorBtn colorName="Purple" handleClick={() => setBgColor('purple')} cName={cName} />
-        <ColorBtn colorName="Lavender" handleClick={() => setBgColor('lavender')} cName={cName} textColor="Black" />
-        <ColorBtn colorName="White" handleClick={() => setBgColor('white')} cName={cName} textColor="Black" />
-        <ColorBtn colorName="Black" handleClick={() => setBgColor('black')} cName={cName} />
+    <>
+      <div className='h-screen w-screen bg-green-400' style={{ backgroundColor: bgColor }}>
+        <div className='my-0 mx-auto flex gap-6 justify-center items-center max-w-fit py-2 px-6 bg-white rounded-full '>
+
+          {colorObject.map((item) => (
+            <button key={item.color} className={`${buttonClassName} ${item.textBlack ? 'text-black' : 'text-white'}`} onClick={() => setBgColor(item.color)} style={{ backgroundColor: item.color, }}>{item.color.toUpperCase()}</button>
+          ))}
+
+        </div>
 
       </div>
-    </div>
+    </>
   )
 }
 
